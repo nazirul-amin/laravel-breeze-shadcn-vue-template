@@ -1,2 +1,2 @@
-## About Laravel
+## About
 Template for new laravel project
