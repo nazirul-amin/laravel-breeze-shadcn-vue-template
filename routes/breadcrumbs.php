@@ -11,7 +11,7 @@ Breadcrumbs::for('dashboard', function (BreadcrumbTrail $trail) {
 /* Profile Pengguna */
 Breadcrumbs::for('profile.edit', function (BreadcrumbTrail $trail) {
     $trail->parent('dashboard');
-    $trail->push('Profil Pengguna', route('profile.edit'));
+    $trail->push('Profile', route('profile.edit'));
 });
 
 // Home > Blog > [Category]

@@ -19,7 +19,7 @@ const items = [
         icon: Home,
     },
     {
-        title: 'Vehicles',
+        title: 'Menu',
         url: '#',
         route: 'vehicles.*',
         icon: Truck,
@@ -43,7 +43,7 @@ const items = [
     <Sidebar>
         <SidebarContent>
             <SidebarGroup>
-                <SidebarGroupLabel class="my-4 text-2xl">{{
+                <SidebarGroupLabel class="my-8 text-2xl">{{
                     $page.props.app.name
                 }}</SidebarGroupLabel>
                 <SidebarGroupContent>
