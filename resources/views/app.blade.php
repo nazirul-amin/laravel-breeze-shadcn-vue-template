@@ -23,4 +23,10 @@
     <body class="font-sans antialiased">
         @inertia
     </body>
+    <script>
+        window.Laravel = {
+            csrfToken: "{{ csrf_token() }}",
+            jsPermissions: {!! auth()->check()?auth()->user()->jsPermissions():0 !!}
+        }
+    </script>
 </html>
