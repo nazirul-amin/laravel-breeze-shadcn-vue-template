@@ -17,11 +17,15 @@ jobs:
           tools: composer:v2
           coverage: xdebug
 
-      - name: Install Dependencies
-        run: composer install --no-interaction --prefer-dist --optimize-autoloader
+      - name: Install composer dependencies
+        uses: ramsey/composer-install@v3
 
       - name: Set up Laravel environment
         run: cp .env.testing .env
+
+      - uses: ryohidaka/action-setup-sqlite@v1.2.0
+        with:
+          version: "3.43.2"
 
       - name: Tests
         run: ./vendor/bin/pest --ci
