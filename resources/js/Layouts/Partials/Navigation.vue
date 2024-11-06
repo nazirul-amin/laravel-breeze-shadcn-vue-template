@@ -43,7 +43,7 @@ const items = [
     <Sidebar>
         <SidebarContent>
             <SidebarGroup>
-                <SidebarGroupLabel class="my-8 text-2xl">{{
+                <SidebarGroupLabel class="my-8 text-2xl text-black">{{
                     $page.props.app.name
                 }}</SidebarGroupLabel>
                 <SidebarGroupContent>
@@ -54,6 +54,7 @@ const items = [
                         >
                             <SidebarMenuButton
                                 asChild
+                                :isActive="route().current(item.route)"
                                 :class="{
                                     'font-bold': route().current(item.route),
                                 }"

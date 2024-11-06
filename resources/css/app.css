@@ -23,7 +23,7 @@
         --accent-foreground: 210 40% 98%;
 
         --muted: 180 30% 95%; /* #e6f4f1 */
-        --muted-foreground: 215.4 16.3% 46.9%;
+        --muted-foreground: 240 5.3% 26.1%;
 
         --destructive: 0 84.2% 60.2%;
         --destructive-foreground: 210 40% 98%;
@@ -33,14 +33,13 @@
         --ring: 207.8 68.2% 78.4%;
         --radius: 0.5rem;
 
-        --sidebar-background: 0 0% 98%;
-        --sidebar-foreground: 240 5.3% 26.1%;
-        --sidebar-primary: 240 5.9% 10%;
-        --sidebar-primary-foreground: 0 0% 98%;
-        --sidebar-accent: 240 4.8% 95.9%;
-        --sidebar-accent-foreground: 240 5.9% 10%;
+        --sidebar-background: var(--muted);
+        --sidebar-foreground: var(--muted-foreground);
+        --sidebar-primary: var(--primary);
+        --sidebar-primary-foreground: var(--primary-foreground);
+        --sidebar-accent: var(--accent);
+        --sidebar-accent-foreground: var(--accent-foreground);
         --sidebar-border: 220 13% 91%;
-        --sidebar-ring: 217.2 91.2% 59.8%;
     }
 
     .dark {
@@ -72,12 +71,9 @@
         --input: 217.2 32.6% 17.5%;
         --ring: 207.8 68.2% 78.4%;
 
-        --sidebar-background: 240 5.9% 10%;
-        --sidebar-foreground: 240 4.8% 95.9%;
-        --sidebar-primary: 224.3 76.3% 48%;
-        --sidebar-primary-foreground: 0 0% 100%;
-        --sidebar-accent: 240 3.7% 15.9%;
-        --sidebar-accent-foreground: 240 4.8% 95.9%;
+        /* Sidebar Colors Updated to Primary for Dark Mode */
+        --sidebar-background: var(--primary);
+        --sidebar-foreground: var(--primary-foreground);
         --sidebar-border: 240 3.7% 15.9%;
         --sidebar-ring: 217.2 91.2% 59.8%;
     }
