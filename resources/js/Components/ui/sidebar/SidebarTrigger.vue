@@ -3,6 +3,7 @@ import type { HTMLAttributes } from 'vue'
 import { cn } from '@/Utils'
 import { PanelLeft } from 'lucide-vue-next'
 import { useSidebar } from './utils'
+import { Button } from '@/Components/ui/button'
 
 const props = defineProps<{
   class?: HTMLAttributes['class']
