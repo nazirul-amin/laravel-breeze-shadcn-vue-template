@@ -32,8 +32,12 @@ class HandleInertiaRequests extends Middleware
     {
         return [
             ...parent::share($request),
+            'app' => [
+                'name' => config('app.name')
+            ],
             'auth' => [
                 'user' => $request->user(),
+                'permissions' => json_decode(auth()->check() ? auth()->user()->jsPermissions() : '{}', true),
             ],
             'ziggy' => fn () => [
                 ...(new Ziggy)->toArray(),
