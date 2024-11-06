@@ -1,7 +1,6 @@
 name: Scan bugs with Larastan
 
-on:
-  push:
+on: [push]
 
 jobs:
   larastan:
