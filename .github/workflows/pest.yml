@@ -23,6 +23,9 @@ jobs:
       - name: Set up Laravel environment
         run: cp .env.testing .env
 
+      - name: Generate application key
+        run: php artisan key:generate
+
       - name: Run migrations
         run: php artisan migrate --env=testing
 
