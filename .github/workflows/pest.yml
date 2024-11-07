@@ -1,0 +1,41 @@
+name: Running Tests with Pest
+
+on: [push]
+
+jobs:
+  pest:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.3
+          tools: composer:v2
+          coverage: xdebug
+
+      - name: Install composer dependencies
+        uses: ramsey/composer-install@v3
+
+      - name: Install npm packages
+        run: npm ci && npm run build
+
+      - name: Build npm packages
+        run: npm ci && npm run build
+
+      - name: Set up Laravel environment
+        run: cp .env.testing .env
+
+      - name: Run migrations
+        run: php artisan migrate --env=testing
+
+      - name: Tests
+        run: ./vendor/bin/pest --ci
